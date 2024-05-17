@@ -1,24 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBar from './components/NavBar';
+import Footer from './components/Footer';
+import SpecificFeatured1 from './components/SpecificFeatured1';
+import SpecificFeatured2 from './components/SpecificFeatured2';
+import SpecificFeatured3 from './components/SpecificFeatured3';
+import FeaturedDogs from './components/FeaturedDogs';
+import React, { useState } from 'react';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import SearchResult from './components/SearchResult';
+import SpecificDogs from './components/SpecificDogs';
 
-function App() {
+const App = () => {
+  const [loading, setLoading] = useState(true)
+  const spinner = document.getElementById('spinner');
+  if (spinner) {
+    setTimeout(() => {
+      spinner.style.display="none";
+      setLoading(false);
+    }, 2000)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      !loading && (
+        <BrowserRouter>
+        <NavBar></NavBar>
+        {/* change body content to Browser Router and start from Home */}
+          <Routes>
+              <Route path='/' element={<FeaturedDogs></FeaturedDogs>}></Route>
+              <Route path='/breed1' element={<SpecificFeatured1></SpecificFeatured1>}></Route>
+              <Route path='/breed2' element={<SpecificFeatured2></SpecificFeatured2>}></Route>
+              <Route path='/breed3' element={<SpecificFeatured3></SpecificFeatured3>}></Route>
+              <Route path='/search' element={<SearchResult></SearchResult>}></Route>
+              <Route path='/specific' element={<SpecificDogs></SpecificDogs>}></Route>
+          </Routes>
+        <Footer></Footer>
+        </BrowserRouter>
+      )
   );
 }
 
