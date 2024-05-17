@@ -1,7 +1,5 @@
 {
   "homepage": "http://brypaulopez.github.io/wd100-react-mp-2",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build",
   "name": "wd100-react-mp2",
   "version": "0.1.0",
   "private": true,
@@ -20,6 +18,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
