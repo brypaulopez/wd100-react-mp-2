@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/wd100-react-mp-2/static/css/main.a70a2224.css",
+    "main.js": "/wd100-react-mp-2/static/js/main.0e1ff70c.js",
+    "static/js/453.f66b6cbd.chunk.js": "/wd100-react-mp-2/static/js/453.f66b6cbd.chunk.js",
+    "static/media/a-z-breeds4.jpg": "/wd100-react-mp-2/static/media/a-z-breeds4.9e7008c41b0a0b5f65cf.jpg",
+    "static/media/HeaderLogo.png": "/wd100-react-mp-2/static/media/HeaderLogo.d1705ed737779e2be19c.png",
+    "index.html": "/wd100-react-mp-2/index.html",
+    "main.a70a2224.css.map": "/wd100-react-mp-2/static/css/main.a70a2224.css.map",
+    "main.0e1ff70c.js.map": "/wd100-react-mp-2/static/js/main.0e1ff70c.js.map",
+    "453.f66b6cbd.chunk.js.map": "/wd100-react-mp-2/static/js/453.f66b6cbd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a70a2224.css",
+    "static/js/main.0e1ff70c.js"
+  ]
+}
