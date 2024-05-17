@@ -1,4 +1,7 @@
 {
+  "homepage": "http://brypaulopez.github.io/wd100-react-mp-2",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build",
   "name": "wd100-react-mp2",
   "version": "0.1.0",
   "private": true,
@@ -37,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }
