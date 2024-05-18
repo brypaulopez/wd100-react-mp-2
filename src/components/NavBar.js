@@ -14,8 +14,7 @@ function NavBar() {
           <Nav className="me-auto">
             <Nav.Link><Link to='/' style={{textDecoration: "none"}}>Home</Link></Nav.Link>
             <Nav.Link><Link to='/search'>Breeds A-Z</Link></Nav.Link>
-            <Nav.Link href="#link">About Us</Nav.Link>
-            <Nav.Link href="#link">Contact Us</Nav.Link>
+            <Nav.Link><Link to='/about'>About Us</Link></Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

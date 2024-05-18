@@ -54,3 +54,10 @@ button , .btn {
     font-weight: 400;
     font-style: normal;
 }
+.carouselSize {
+    width: 1290px !important;
+    height: 500px !important;
+}
+.carouselSize img {
+    object-fit: contain;
+}

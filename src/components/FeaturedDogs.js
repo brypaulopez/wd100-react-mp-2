@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
-import Image4 from "../img/a-z-breeds4.jpg"
+import Image4 from "../img/a-z-breeds4.jpg";
+import Image1 from "../img/a-z-breeds.jpg";
+import Image2 from "../img/a-z-breeds2.png"
+import Image3 from "../img/a-z-breeds3.png";
+import { Carousel } from "react-bootstrap";
 
 const FeaturedDogs = () => {
     let [filteredDogs1, setDogs1] = useState([]);
@@ -82,12 +86,36 @@ const FeaturedDogs = () => {
                 <h1 className='m-0' style={{color: "white"}}>Welcome to Pawpedia</h1>
             </div>
             {/* Main Image */}
-            <div className="container mt-3">
+            <div className="container border border-primary p-0 mt-3">
                 <img src={Image4} alt="" className='w-100'/>
             </div>
             {/* Carousel */}
-            <div className="container">
-
+            <div className="container border border-primary mt-3">
+                <Carousel>
+                    <Carousel.Item className="carouselSize w-100">
+                        <img src={Image1} alt="" className="w-100"/>
+                        <Carousel.Caption style={{backgroundColor: "#003594"}}>
+                        <h3>First slide label</h3>
+                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    <Carousel.Item className="carouselSize w-100">
+                        <img src={Image3} alt="" className="w-100"/>
+                        <Carousel.Caption style={{backgroundColor: "#003594", marginBottom:"300px"}}>
+                        <h3>Second slide label</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    <Carousel.Item className="carouselSize w-100">
+                        <img src={Image2} alt="" className="w-100"/>
+                        <Carousel.Caption style={{backgroundColor: "#003594"}}>
+                        <h3>Third slide label</h3>
+                        <p>
+                            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                        </p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                </Carousel>
             </div>
             {/* Top Stories */}
             <div className="container mt-5 rounded d-flex align-items-center topStories">
@@ -99,7 +127,7 @@ const FeaturedDogs = () => {
                     filteredDogs1.map((data, index)=> 
                     <>
                         <div className="col-md-4 col-12 col-sm-6">
-                            <div className="card">
+                            <div className="card border border-primary">
                                 <img src={data.image_link} alt="" className="card-img-top"/>
                                 <div className="card-body">
                                     <h5 className="card-title">{data.name}</h5>
@@ -117,7 +145,7 @@ const FeaturedDogs = () => {
                         filteredDogs2.map((data, index)=> 
                         <>
                             <div className="col-md-4 col-12 col-sm-6">
-                                <div className="card">
+                                <div className="card border border-primary">
                                     <img src={data.image_link} alt="" className="card-img-top"/>
                                     <div className="card-body">
                                         <h5 className="card-title">{data.name}</h5>
@@ -136,7 +164,7 @@ const FeaturedDogs = () => {
                         filteredDogs3.map((data, index)=> 
                         <>
                             <div className="col-md-4 col-12 col-sm-6">
-                                <div className="card">
+                                <div className="card border border-primary">
                                     <img src={data.image_link} alt="" className="card-img-top"/>
                                     <div className="card-body">
                                         <h5 className="card-title">{data.name}</h5>

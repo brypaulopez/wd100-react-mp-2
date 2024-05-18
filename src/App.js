@@ -10,6 +10,7 @@ import React, { useState } from 'react';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import SearchResult from './components/SearchResult';
 import SpecificDogs from './components/SpecificDogs';
+import AboutUs from './components/About';
 
 const App = () => {
   const [loading, setLoading] = useState(true)
@@ -31,7 +32,8 @@ const App = () => {
               <Route path='/breed2' element={<SpecificFeatured2></SpecificFeatured2>}></Route>
               <Route path='/breed3' element={<SpecificFeatured3></SpecificFeatured3>}></Route>
               <Route path='/search' element={<SearchResult></SearchResult>}></Route>
-              <Route path='/specific' element={<SpecificDogs></SpecificDogs>}></Route>
+              <Route path='/Specific' element={<SpecificDogs></SpecificDogs>}></Route>
+              <Route path='/about' element = {<AboutUs></AboutUs>}></Route>
           </Routes>
         <Footer></Footer>
         </BrowserRouter>

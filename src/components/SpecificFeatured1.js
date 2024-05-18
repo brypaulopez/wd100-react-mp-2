@@ -36,8 +36,8 @@ const SpecificFeatured1 = () => {
         answer = 'ABSOLUTELY!';
         color = 'primary';
     }
-    else if (filteredDogs1.good_with_children == 3) {
-        answer = 'Half way there..';
+    else if (filteredDogs1.good_with_children = 3) {
+        answer = 'Almost there..';
         color = 'warning';
     }
     else {
@@ -53,12 +53,11 @@ const SpecificFeatured1 = () => {
         guard = 'Made for it!';
         colorg = 'primary'
     }
-    
     return ( 
         <>
             <div className="container mt-5">
                 <div className="col-md-12">
-                    <div className="card">
+                    <div className="card border border-primary">
                         <img src={filteredDogs1.image_link} alt="..."  className="card-img-top"/>
                         <div className="card-body">
                         <h1 className="text-dark">{filteredDogs1.name}</h1>

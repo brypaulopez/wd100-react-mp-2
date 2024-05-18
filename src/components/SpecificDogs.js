@@ -1,16 +1,14 @@
 import {useEffect, useState} from "react";
 import {Link, useLocation} from "react-router-dom";
 
-const SpecificDogs = (props) => {
+const SpecificDogs = () => {
     let location = useLocation();
-    let data = Number(location.state)
-    let name = ' '
-    console.log();
-    console.log(data);
+    let name = location.state
+    let index = 0
     let [searchDogs1, resultDogs1] = useState([]);
+    console.log(location);
     useEffect(()=> {
         let searchList = async ()  => {
-            
             let results = await fetch('https://api.api-ninjas.com/v1/dogs?name=' + name + '&offset=0',
                 {
                     method: 'GET',
@@ -24,7 +22,7 @@ const SpecificDogs = (props) => {
             }
             let searchResults = await results.json();
             console.log(searchResults);
-            resultDogs1(searchResults[data]);
+            resultDogs1(searchResults[index]);
         }
         searchList();
     },[]);
@@ -33,17 +31,38 @@ const SpecificDogs = (props) => {
     let color = ' ';
     let guard = ' ';
     let colorg = ' ';
-    
+    if (searchDogs1.good_with_children >= 4) {
+        answer = 'ABSOLUTELY!';
+        color = 'primary';
+    }
+    else if (searchDogs1.good_with_children = 3) {
+        answer = 'Almost there..';
+        color = 'warning';
+    }
+    else {
+        answer = 'Unfortunately, no';
+        color = 'danger';
+    }
+
+    if (searchDogs1.good_with_strangers >= 3) {
+        guard = 'NO!';
+        colorg = 'danger'
+    }
+    else {
+        guard = 'Made for it!';
+        colorg = 'primary'
+    }
+    // console.log(searchDogs1[0].good_with_strangers);
     return ( 
         <>
             <div className="container mt-5">
                 <div className="col-md-12">
                     <div className="card">
-                        <img src={searchDogs1.image_link} alt="..."  className="card-img-top"/>
-                        <div className="card-body">
-                        <h1 className="text-dark">{searchDogs1.name}</h1>
-                        <hr />
-                        {/* <div className="row">
+                    <img src={searchDogs1.image_link} alt="..."  className="card-img-top"/>
+                    <div className="card-body">
+                    <h1 className="text-dark">{searchDogs1.name}</h1>
+                    <hr />
+                        <div className="row">
                             <div className="col-md-6 text-center">
                             <h2>Dog Breed's Temparament</h2>
                                 <p>Barking: <progress value={searchDogs1.barking} max={5}/></p>
@@ -72,10 +91,10 @@ const SpecificDogs = (props) => {
                                 <p>Min Weight for Female: {`${searchDogs1.min_weight_female} kg`}</p>
                                 <p>Max life expectancy: {`${searchDogs1.max_life_expectancy} years`}</p>
                             </div>
-                        </div> */}
+                        </div>
                         <br />
                         <Link to="/search" className="btn btn-primary">Go back</Link>
-                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
