@@ -55,7 +55,7 @@ const SpecificDogs = () => {
     // console.log(searchDogs1[0].good_with_strangers);
     return ( 
         <>
-            <div className="container mt-5">
+            <div className="container mt-5 mb-5">
                 <div className="col-md-12">
                     <div className="card">
                     <img src={searchDogs1.image_link} alt="..."  className="card-img-top"/>
@@ -93,7 +93,7 @@ const SpecificDogs = () => {
                             </div>
                         </div>
                         <br />
-                        <Link to="/search" className="btn btn-primary">Go back</Link>
+                        <Link to="/wd100-react-mp-2/search" className="btn btn-primary">Go back</Link>
                     </div>
                     </div>
                 </div>

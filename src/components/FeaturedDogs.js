@@ -81,7 +81,6 @@ const FeaturedDogs = () => {
     }, []);
     return ( 
         <>
-            
             <div className="container d-flex align-items-center justify-content-center rounded" style={{backgroundColor: "#003594"}} id='selectContainer'>
                 <h1 className='m-0' style={{color: "white"}}>Welcome to Pawpedia</h1>
             </div>
@@ -95,24 +94,22 @@ const FeaturedDogs = () => {
                     <Carousel.Item className="carouselSize w-100">
                         <img src={Image1} alt="" className="w-100"/>
                         <Carousel.Caption style={{backgroundColor: "#003594"}}>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h3 class>Canine Kingdom</h3>
+                        <p> an all-encompassing resource within Pawpedia dedicated to celebrating and exploring the world of dogs.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item className="carouselSize w-100">
-                        <img src={Image3} alt="" className="w-100"/>
-                        <Carousel.Caption style={{backgroundColor: "#003594", marginBottom:"300px"}}>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <img src={Image3} alt="" className="w-100" id="secondImage" />
+                        <Carousel.Caption id="secondCaption" style={{backgroundColor: "#003594", marginBottom:"300px"}}>
+                        <h3 className="w-100">Puppy Information</h3>
+                        <p className="w-100">Puppies are adorable, playful, and curious young dogs that require special care and attention. From birth until they reach adulthood</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item className="carouselSize w-100">
                         <img src={Image2} alt="" className="w-100"/>
                         <Carousel.Caption style={{backgroundColor: "#003594"}}>
-                        <h3>Third slide label</h3>
-                        <p>
-                            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                        </p>
+                        <h3>All Breeds Around the world!</h3>
+                        
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
@@ -121,18 +118,18 @@ const FeaturedDogs = () => {
             <div className="container mt-5 rounded d-flex align-items-center topStories">
                 <h2 className=' rounded text-white '>Featured Dog Breeds</h2>
             </div>
-            <div className="container mt-3">
+            <div className="container mt-3 mb-5">
                 <div className="row g-5">
                     {
                     filteredDogs1.map((data, index)=> 
                     <>
-                        <div className="col-md-4 col-12 col-sm-6">
+                        <div className="col-md-4 col-12 col-sm-12">
                             <div className="card border border-primary">
                                 <img src={data.image_link} alt="" className="card-img-top"/>
                                 <div className="card-body">
                                     <h5 className="card-title">{data.name}</h5>
                                     <p className="card-text">Golden Retrievers are friendly, intelligent, and devoted dogs, making them excellent family pets and reliable companions. Known for their love of play and their gentle disposition, they excel in obedience and service roles. Their golden coats and affectionate nature make them one of the most popular breeds worldwide.</p>
-                                    <Link to="/breed1" className="btn btn-primary" state={index}>
+                                    <Link to="/wd100-react-mp-2/breed1" className="btn btn-primary" state={index}>
                                         Learn More
                                     </Link>
                                 </div>
@@ -144,14 +141,14 @@ const FeaturedDogs = () => {
                     {
                         filteredDogs2.map((data, index)=> 
                         <>
-                            <div className="col-md-4 col-12 col-sm-6">
+                            <div className="col-md-4 col-12 col-sm-12">
                                 <div className="card border border-primary">
                                     <img src={data.image_link} alt="" className="card-img-top"/>
                                     <div className="card-body">
                                         <h5 className="card-title">{data.name}</h5>
                                         <p className="card-text">German Shepherds are highly intelligent, courageous, and versatile working dogs. Renowned for their loyalty and confidence, they are often employed in police and military roles. They are protective and form strong bonds with their families, making them both excellent guardians and companions. <br /><br />
                                         </p>
-                                        <Link to="/breed2" className="btn btn-primary" state={index}>
+                                        <Link to="/wd100-react-mp-2/breed2" className="btn btn-primary" state={index}>
                                             Learn More
                                         </Link>
                                     </div>
@@ -163,13 +160,13 @@ const FeaturedDogs = () => {
                     {
                         filteredDogs3.map((data, index)=> 
                         <>
-                            <div className="col-md-4 col-12 col-sm-6">
+                            <div className="col-md-4 col-12 col-sm-12">
                                 <div className="card border border-primary">
                                     <img src={data.image_link} alt="" className="card-img-top"/>
                                     <div className="card-body">
                                         <h5 className="card-title">{data.name}</h5>
                                         <p className="card-text">Siberian Huskies are energetic, friendly, and known for their striking blue or multi-colored eyes and distinctive coat. Originally bred as sled dogs, they have excellent endurance and a playful nature. They are social and good-natured, making them great family pets, though they require plenty of exercise and mental stimulation.</p>
-                                        <Link to="/breed3" className="btn btn-primary" state={index}>
+                                        <Link to="/wd100-react-mp-2/breed3" className="btn btn-primary" state={index}>
                                             Learn More
                                         </Link>
                                     </div>

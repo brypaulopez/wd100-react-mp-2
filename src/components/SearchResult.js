@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const SearchResult = () => {
+    // let location = useLocation();
+    // let identity = Number(location.state);
     let [searchDogs, resultDogs] = useState([]);
     // FOR DEFAULT
     useEffect(()=> {
         let searchList = async ()  => {
             var name = ' '
-            var num = 0
+            var num = 0;
             let result = await fetch('https://api.api-ninjas.com/v1/dogs?name=' + name + '&offset=' + num,
                 {
                     method: 'GET',
@@ -49,7 +51,13 @@ const SearchResult = () => {
     // FOR SEARCH AND FILTER
     let searchListFilter = () => {
         let searchName = document.getElementById('searchFilter').value; // for input value once user enter any text
+        console.log(searchName);
+        if (searchName == 0) {
+            searchName = " " + "&offset=0";
+        }
+        console.log(searchName);
         let searchList2 = async (searchName)  => {
+            console.log(searchName);
             var name = searchName
             let result1 = await fetch('https://api.api-ninjas.com/v1/dogs?name=' + name,
                 {
@@ -87,24 +95,24 @@ const SearchResult = () => {
                         <div className="col-1"><Link onClick={()=> searchList1(0)}>A</Link></div>
                         <div className="col-1"><Link onClick={()=> searchList1(20)}>B</Link></div>
                         <div className="col-1"><Link onClick={()=> searchList1(48)}>C</Link></div>
-                        <div className="col-1"><Link onClick={()=> searchList1(69)}>D/E/F</Link></div>
+                        <div className="col-2 col-sm-2"><Link onClick={()=> searchList1(69)}>D/E/F</Link></div>
                         <div className="col-1"><Link onClick={()=> searchList1(89)}>F/I</Link></div>
-                        <div className="col-1"><Link onClick={()=> searchList1(109)}>I/J/K/L/M</Link></div>
-                        <div className="col-1"><Link onClick={()=> searchList1(129)}>M/N/O/P</Link></div>
+                        <div className="col-3 col-md-2 col-sm-2"><Link onClick={()=> searchList1(109)}>I/J/K/L/M</Link></div>
+                        <div className="col-3 col-md-2 col-sm-2"><Link onClick={()=> searchList1(129)}>M/N/O/P</Link></div>
                         <div className="col-1"><Link onClick={()=> searchList1(149)}>P/R</Link></div>
                         <div className="col-1"><Link onClick={()=> searchList1(169)}>S</Link></div>
-                        <div className="col-1"><Link onClick={()=> searchList1(200)}>T/V/W/Y</Link></div>
+                        <div className="col-2 col-md-2 col-sm-2"><Link onClick={()=> searchList1(200)}>T/V/W/Y</Link></div>
                     </div>
                     <div className="row g-5 mt-3">
                     {
                         searchDogs.map((data) =>
                         <>
-                        <div className="col-md-3 col-12 col-sm-6">
+                        <div className="col-md-4 col-6 col-sm-4 col-lg-3">
                             <div className="card">
                                 <img src={data.image_link} alt="" className="card-img-top"/>
                                 <div className="card-body">
                                     <h5 className="card-title">{data.name}</h5>
-                                    <Link to="/Specific" className="btn btn-primary" state={data.name}>
+                                    <Link to="/wd100-react-mp-2/Specific" className="btn btn-primary" state={data.name}>
                                         Learn More
                                     </Link>
                                 </div>

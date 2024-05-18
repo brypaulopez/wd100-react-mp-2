@@ -1,7 +1,24 @@
+import { Alert } from "react-bootstrap"
 import Logo from "../img/HeaderLogo.png"
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Link } from "react-router-dom";
 const Footer = () => {
+    const emailAlert = () => {
+        toast('⭐ Thank you for Subscribing!', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
+    }
     return ( 
         <>
+            
             <div className="container-fluid footer">
             <div className="container">
                 <div className="row">
@@ -12,7 +29,7 @@ const Footer = () => {
                         <div className="input-group">
                             <span className="input-group-text bg-dark text-white">Email address:</span>
                             <input type="text" className="form-control"></input>
-                            <button className="btn btn-secondary">Submit</button>
+                            <Link><button className="btn btn-secondary" type="submit" onClick={emailAlert}>Submit</button></Link>
                         </div>
                     </form>
                     <p className="text-white" style={{fontSize: "12px", paddingTop: "5px"}}>By providing your email, you agree to the <span><a href="#">Terms & Conditions</a></span> and <span><a href="#">Privacy Policy</a></span>. You may unsubscribe later.</p>
@@ -61,6 +78,7 @@ const Footer = () => {
                 </div>
             </div>
             </div>
+            <ToastContainer/>
         </>
      );
 }

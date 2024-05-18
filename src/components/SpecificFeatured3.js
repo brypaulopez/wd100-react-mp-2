@@ -55,7 +55,7 @@ const SpecificFeatured3 = () => {
     }
     return ( 
         <>
-            <div className="container mt-5">
+            <div className="container mt-5 mb-5">
                 <div className="col-md-12">
                     <div className="card border border-primary">
                         <img src={filteredDogs3.image_link} alt="..."  className="card-img-top"/>
@@ -95,7 +95,7 @@ const SpecificFeatured3 = () => {
                                 <p>Max life expectancy: {`${filteredDogs3.max_life_expectancy} years`}</p>
                             </div>
                         </div>
-                        <Link to="/" className="btn btn-primary">Go back</Link>
+                        <Link to="/wd100-react-mp-2/" className="btn btn-primary">Go back</Link>
                         </div>
                     </div>
                 </div>

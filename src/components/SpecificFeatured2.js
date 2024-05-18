@@ -56,7 +56,7 @@ const SpecificFeatured2 = () => {
     console.log(filteredDogs2.good_with_strangers);
     return ( 
         <>
-            <div className="container mt-5">
+            <div className="container mt-5 mb-5">
                 <div className="col-md-12">
                     <div className="card border border-primary">
                         <img src={filteredDogs2.image_link} alt="..."  className="card-img-top"/>
@@ -97,7 +97,7 @@ const SpecificFeatured2 = () => {
                             </div>
                         </div>
                         <br />
-                        <Link to="/" className="btn btn-primary">Go back</Link>
+                        <Link to="/wd100-react-mp-2/" className="btn btn-primary">Go back</Link>
                         </div>
                     </div>
                 </div>
