@@ -73,6 +73,16 @@ button , .btn {
 .btn:hover {
     transform: translateY(-2px) !important;
 }
+.carousel-indicators button{
+    color: #003594 !important;
+    background-color: #003594 !important;
+}
+@media only screen and (max-width: 1024px) {
+    /* For mobile phones: */
+    #secondImage {
+        margin-top: 90px !important;
+    }
+  }
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
     .carouselSize {

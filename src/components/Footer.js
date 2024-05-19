@@ -34,6 +34,7 @@ const Footer = () => {
                     </form>
                     <p className="text-white" style={{fontSize: "12px", paddingTop: "5px"}}>By providing your email, you agree to the <span><a href="#">Terms & Conditions</a></span> and <span><a href="#">Privacy Policy</a></span>. You may unsubscribe later.</p>
                     <div className="logo-footer">
+                        <p className="text-white">Copyright &copy; 2024 Pawpedia. All Rights Reserved.</p>
                         <img src={Logo} alt="" id="HeaderLogo" />
                     </div>
                 </div>
